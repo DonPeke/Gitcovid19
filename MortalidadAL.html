@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=Content-Typecontent=text/html; charset=utf-8>
+<title>Mortalidad AL</title>
+
+<script type=text/javascript src=https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js></script>
+<style type=text/css>
+${demo.css}
+</style>
+<script type=text/javascript>
+$(function ()
+ {
+	$('#container').highcharts
+	(
+		{
+			chart:
+			{
+				type: 'column'
+			},
+			title:
+			{
+				text: 'COVID 19: Mortalidad',
+				x: -20 //center
+			},
+			subtitle: 
+			{
+				text: 'Latinoamerica',
+				x: -20
+			},
+			xAxis:
+			{
+				categories: ['Personas Recuperadas','Muertes']
+			},
+				credits:
+			{ 
+				enabled: false 
+			},
+			yAxis:
+			{
+				title:
+				{
+					text: 'Cantidad'
+				},
+				plotLines: 
+				[
+					{
+						value: 0,
+						width: 1,
+						color: '#808080'
+					}
+				]
+			},
+			tooltip:
+			{
+				valueSuffix: ''
+			},
+			yAxis:
+			{
+				maxPadding:0.1,
+				title:
+				{
+					text: 'CANTIDAD'
+				},
+			},
+			legend:
+			{
+				layout: 'horizontal',
+				align: 'center',
+				verticalAlign: 'bottom',
+				borderWidth: 0
+			},
+			plotOptions:
+			{
+				series:
+				{
+					allowPointSelect: true,
+					marker:
+					{
+						enabled: true,
+						symbol: 'circle',
+						radius: 1.4
+					},
+					animation:
+					{
+						duration: 1500,
+					}
+				},
+				column:
+				{
+					dataLabels:
+					{
+						enabled: true,
+						inside: true,
+						y:-30,
+						x:0,
+						crop: true,
+						overflow: 'none',
+						rotation: -90,
+						style:
+						{
+							color: '#000000',
+							fontsize: "10px"
+						}
+					}	
+				}
+			},
+		
+			series:
+			[
+				/*{
+					name: 'Venezuela',
+					data: [93,9]
+				},*/
+				{
+					name: 'Colombia',
+					data: [319,112]
+				},
+				{
+					name: 'Ecuador',
+					data: [597,355]
+				},
+				{
+					name: 'Brazil',
+					data: [173,1328]
+				},
+				{
+					name: 'Peru',
+					data: [2642,216]
+				},
+				
+				{
+					name: 'Argentina',
+					data: [365,92]
+				}
+			]
+		}
+	);
+});
+</script>
+</head>
+<body>
+<script src=https://code.highcharts.com/highcharts.js></script>
+<script src=https://code.highcharts.com/modules/exporting.js></script>
+
+<div id=container style=min-width: 310px; height: 400px; margin: 0 auto></div>
+
+</body>
+</html>
